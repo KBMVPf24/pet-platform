@@ -60,10 +60,15 @@ app.get('/api', (req, res) => {
   });
 });
 
-// 导入路由 (后续添加)
-// app.use('/api/users', require('./routes/users'));
-// app.use('/api/pets', require('./routes/pets'));
-// app.use('/api/products', require('./routes/products'));
+// 导入路由
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/pets', require('./routes/pets'));
+app.use('/api/products', require('./routes/products'));
+app.use('/api/orders', require('./routes/orders'));
+app.use('/api/hospitals', require('./routes/hospitals'));
+app.use('/api/appointments', require('./routes/appointments'));
+app.use('/api/adoptions', require('./routes/adoptions'));
+app.use('/api/posts', require('./routes/posts'));
 
 // 404 处理
 app.use((req, res) => {
